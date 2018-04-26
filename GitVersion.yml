@@ -22,6 +22,7 @@ branches:
     increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
+	is-release-branch: true
   features?[/-]:
     mode: ContinuousDeployment
     tag: useBranchName
@@ -51,7 +52,8 @@ branches:
     mode: ContinuousDeployment
     tag: alpha
     increment: Minor
+	is-develop: true
     prevent-increment-of-merged-branch-version: false
-    track-merge-target: true
+    track-merge-target: true	
 ignore:
   sha: []
