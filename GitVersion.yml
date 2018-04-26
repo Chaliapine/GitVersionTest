@@ -10,8 +10,7 @@ build-metadata-padding: 4
 commits-since-version-source-padding: 4
 commit-message-incrementing: Enabled
 branches:
-  master:
-    regex: master
+  master:    
     mode: ContinuousDeployment
     tag: ''
     increment: Patch
@@ -19,8 +18,7 @@ branches:
     track-merge-target: false
     tracks-release-branches: false
     is-release-branch: false
-  release:
-    regex: releases?[/-]
+  releases?[/-]:
     mode: ContinuousDeployment
     tag: beta
     increment: Patch
@@ -28,17 +26,15 @@ branches:
     track-merge-target: false
     tracks-release-branches: false
     is-release-branch: true
-  feature:
-    regex: features?[/-]
+  features?[/-]:
     mode: ContinuousDeployment
     tag: useBranchName
     increment: Inherit
-    prevent-increment-of-merged-branch-version: false
+    prevent-increment-of-merged-abranch-version: false
     track-merge-target: false
     tracks-release-branches: false
     is-release-branch: false
-  pull-request:
-    regex: (pull|pull\-requests|pr)[/-]
+  (pull|pull\-requests|pr)[/-]:
     mode: ContinuousDeployment
     tag: PullRequest
     increment: Inherit
@@ -47,8 +43,7 @@ branches:
     track-merge-target: false
     tracks-release-branches: false
     is-release-branch: false
-  hotfix:
-    regex: hotfix(es)?[/-]
+  hotfix(es)?[/-]:
     mode: ContinuousDeployment
     tag: beta
     increment: Patch
@@ -56,8 +51,7 @@ branches:
     track-merge-target: false
     tracks-release-branches: false
     is-release-branch: false
-  support:
-    regex: support[/-]
+  support[/-]:
     mode: ContinuousDeployment
     tag: ''
     increment: Patch
@@ -65,8 +59,7 @@ branches:
     track-merge-target: false
     tracks-release-branches: false
     is-release-branch: false
-  develop:
-    regex: dev(elop)?(ment)?$
+  dev(elop)?(ment)?$:
     mode: ContinuousDeployment
     tag: unstable
     increment: Minor
